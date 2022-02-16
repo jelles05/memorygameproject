@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@500&display=swap" rel="stylesheet">
+    <script src='js/script.js'></script>
+</head>
+
+<body>
+    <h1>Memory Game</h1>
+    <div id="carte">
+        <div id="memory"></div>
+        <div id="affiche">
+            <form>
+                <div>
+                    <label for="selectImages">Choisissez un type d'image pour le jeu :</label>
+                    <select id="selectImages" name="selectImages">
+                        <option value="animaux">L'espace cosmique</option>
+                        <option value="fleurs">Extraterrestres</option>
+                    </select>
+                </div>
+            </form>
+            <div id="fieldset">
+                <div> Paires trouvées : <span id="matchedImages"></span></div>
+                <div id="gestion-timer">Temps : <span class="timer" id="timer"></span></div>
+                <div id="nombre-click">Nombre d'essais : <span class="move-counter" id="tryCounter"></span></div>
+            </div>
+            <div class="buttons">
+                <button class="startOrStop">Nouvelle Partie</button>
+                <!-- <button class="quit">Quitter</button> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="endGame" class="hidden">
+        <div class="message">
+            <h2>Félicitations!</h2>
+            <div>
+                <div>Nombre d'essais effectués : <span id="tries"></span></div>
+                <div>Temps pris : <span id="temps"></span></div>
+                <div>Meilleur temps : <span id="meilleurTemps"></span></div>
+            </div>
+            <div class="buttons">
+                <button class="startOrStop">Jouer à nouveau</button>
+                <!-- <button class="quit">Quitter</button> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        const valueSelect = document.getElementById('selectImages')
+        const quitButtons = document.getElementsByClassName('quit')
+        const triesMade = document.getElementById('tries')
+        const tempsPris = document.getElementById('temps')
+        const meilleurTemps = document.getElementById('meilleurTemps')
+        const endGameMessage = document.getElementById('endGame')
+        const timer = document.getElementById('timer')
+        const counter = document.getElementById('tryCounter')
+        const matchedImages = document.getElementById('matchedImages')
+        const boutonsStartOrStop = document.getElementsByClassName('startOrStop')
+        const imgContainer = document.getElementById('memory')
+        const imgContainers = document.getElementsByClassName('divImageContainer')
+        Game.gameControler(imgContainer, imgContainers, boutonsStartOrStop, timer, counter, matchedImages, endGameMessage, triesMade, tempsPris, meilleurTemps, quitButtons, valueSelect)
+    </script>
+</body>
+
+</html>

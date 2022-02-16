@@ -1,0 +1,181 @@
+html, * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(98, 7, 139);
+    background-image: url('https://cdn.wallpapersafari.com/29/95/FKPn1s.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'PixelFont';
+    src: url(../font/ARCADECLASSIC.TTF);
+}
+
+img {
+    width: 115px;
+    height: 115px;
+    border-radius: 15px;
+}
+
+#memory {
+    width: 42%;
+    background-color: rgba(0, 0, 0, 0.822);
+    padding: 20px 0;
+    border-radius: 12px;
+    box-shadow: 7px 5px 5px #000000a1;
+}
+
+h1 {
+    font-family: 'PixelFont';
+    font-size: 50px;
+    color: white;
+    text-shadow: rgba(255, 255, 255, 0.493) 2px 2px;
+}
+
+h1, #carte {
+    text-align: center;
+}
+
+#carte {
+    margin-top: 20px;
+}
+
+#memory>div, #carte>div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#memory>div {
+    margin: 10px;
+}
+
+#affiche, #endGame, button, select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+}
+
+#affiche {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.822);
+    border-radius: 15px;
+    box-shadow: 7px 5px 5px #000000a1;
+    padding: 20px;
+    margin: 70px 0 0 20px;
+    color: white;
+}
+
+form {
+    background-color: #cb7ff7;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+form select {
+    border-radius: 10px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.buttons button {
+    padding: 3px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: padding 1s;
+}
+
+.buttons button:hover {
+    padding: 5px 8px;
+}
+
+button {
+    margin-right: 10px;
+    background-color: white;
+    padding: 2px;
+}
+
+/* ----------------------FLIP IMAGES----------------------- */
+
+.divImageContainer {
+    perspective: 1000px;
+}
+
+.divImageContainer:active .divImageFlipper, .divImageContainer.flipped .divImageFlipper {
+    transform: rotateY(180deg);
+}
+
+.divImageContainer, .divImageFront, .divImageBack {
+    width: 115px;
+    height: 115px;
+}
+
+.divImageFlipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.divImageFront, .divImageBack {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.divImageFront {
+    z-index: 2;
+}
+
+.divImageBack {
+    transform: rotateY(180deg);
+}
+
+/* ------------------------------------------------------- */
+
+/* --------------------MATCHED IMAGES------------------- */
+
+.matched {
+    opacity: 0.7;
+}
+
+/* ------------------------------------------------------- */
+
+/*----------------------HIDDEN ENDGAME---------------------*/
+
+.hidden {
+    display: none;
+}
+
+#endGame {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.message {
+    background: linear-gradient(45deg, #E2BDE2, #CC74CC, #90D56F, #ADF18D);
+    width: 60%;
+    margin: 60px auto 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.message>* {
+    margin: 10px 0;
+}
+
+/*----------------------------------------------------------*/
